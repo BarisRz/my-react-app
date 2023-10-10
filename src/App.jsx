@@ -1,5 +1,6 @@
 import PokemonCard from "./components/PokemonCard";
 import "./App.css";
+import { useState } from "react";
 const pokemonList = [
   {
     name: "bulbasaur",
@@ -11,14 +12,17 @@ const pokemonList = [
   },
 ];
 function App() {
+  const [count, setCount] = useState(0);
+  const handleClick = () => {
+    setCount(count + 1);
+  };
   return (
     <>
       <div>
-        <PokemonCard pokemon={pokemonList[0]} />
+        <PokemonCard pokemon={pokemonList[count % 2]} />
       </div>
-      <div>
-        <PokemonCard pokemon={pokemonList[1]} />
-      </div>
+      <button onClick={handleClick}>Précedent</button>
+      <button onClick={handleClick}>Suivant</button>
     </>
   );
 }
