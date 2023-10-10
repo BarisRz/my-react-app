@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prop-types
 function NavBar({ add, remove }) {
   return (
     <>
