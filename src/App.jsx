@@ -1,6 +1,7 @@
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
 import "./App.css";
+import { useState } from "react";
 const pokemonList = [
   {
     name: "Bulbasaur",
@@ -27,12 +28,16 @@ const pokemonList = [
   },
 ];
 function App() {
+  const [whichPokemon, setWhichPokemon] = useState(0);
+  function majIndex(index) {
+    setWhichPokemon(index);
+  }
   return (
     <>
       <div className="affichagePokemon">
-        <PokemonCard pokemon={pokemonList[0]} />
+        <PokemonCard pokemon={pokemonList[whichPokemon]} />
       </div>
-      <NavBar pokemonList={pokemonList} />
+      <NavBar pokemonList={pokemonList} onSelection={majIndex} />
     </>
   );
 }
