@@ -30,20 +30,19 @@ const pokemonList = [
 function App() {
   const [count, setCount] = useState(0);
   const addClick = () => {
-    setCount(count + 1);
+    if (count < pokemonList.length - 1) {
+      setCount(count + 1);
+    }
   };
   const removeClick = () => {
-    setCount(count - 1);
+    if (count > 0) {
+      setCount(count - 1);
+    }
   };
   return (
     <>
       <div>
-        <NavBar
-          count={count}
-          tailleListe={pokemonList.length}
-          add={addClick}
-          remove={removeClick}
-        />
+        <NavBar add={addClick} remove={removeClick} />
         <PokemonCard pokemon={pokemonList[count]} />
       </div>
     </>
