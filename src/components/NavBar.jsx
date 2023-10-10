@@ -1,10 +1,11 @@
-// eslint-disable-next-line react/prop-types
-function NavBar({ add, remove }) {
+/* eslint-disable react/prop-types */
+function NavBar({ pokemonList }) {
   return (
-    <>
-      <button onClick={remove}>Précédent</button>
-      <button onClick={add}>Suivant</button>
-    </>
+    <div className="pokemonListe">
+      {pokemonList.map((element) => (
+        <button key={element.name}>{element.name}</button>
+      ))}
+    </div>
   );
 }
 export default NavBar;

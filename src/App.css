@@ -18,3 +18,11 @@
   border-radius: 50%;
   box-shadow: inherit;
 }
+.pokemonListe {
+  text-align: center;
+}
+
+.affichagePokemon {
+  display: flex;
+  justify-content: center;
+}
