@@ -1,7 +1,7 @@
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const pokemonList = [
   {
     name: "Bulbasaur",
@@ -19,9 +19,9 @@ const pokemonList = [
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
   },
   {
-    name: "Caterpie",
+    name: "Pikachu",
     imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
   },
   {
     name: "Mew",
@@ -32,6 +32,9 @@ function App() {
   function majIndex(index) {
     setWhichPokemon(index);
   }
+  useEffect(() => {
+    alert("Hello Pokemon Trainer 😎");
+  }, []);
   return (
     <>
       <div className="affichagePokemon">
