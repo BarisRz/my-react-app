@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 function PokemonCard({ pokemon }) {
   PokemonCard.propTypes = {
-    props: PropTypes.shape({
+    pokemon: PropTypes.shape({
       name: PropTypes.string.isRequired,
       imgSrc: PropTypes.string,
     }).isRequired,
